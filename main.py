@@ -16,7 +16,7 @@ async def new_client_connected(client_socket, path):
 
     # Для получения всех сообщений из сокета
     while True:
-        new_message = client_socket.recv()
+        new_message = await client_socket.recv()
         print(f'New message from a client: {new_message}')
         await send_message(new_message)
 
